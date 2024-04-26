@@ -1,0 +1,146 @@
+﻿@using MyFi.Models
+
+@{
+    IncomeExpensiveCombination model = Model;
+
+    // Crear listas de cantidades de ingresos y gastos
+    List<int> incomeAmounts = model._incomes.Select(income => income.Amount).ToList();
+    List<int> expenseAmounts = model._expenses.Select(expense => expense.Amount).ToList();
+
+    // Calcular el total de ingresos y gastos
+    float totalIncome = incomeAmounts.Sum();
+    float totalExpense = expenseAmounts.Sum();
+    float totalData = totalIncome + totalExpense;
+}
+
+<h2>Resumen</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Total de gastos</h5>
+        <p class="card-text">@totalExpense $RD</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Total de Ingresos</h5>
+        <p class="card-text">@totalIncome $RD</p>
+    </div>
+</div>
+
+<h2>Gráfico de Barras</h2>
+<!-- Canvas donde se renderizará el gráfico de barras -->
+<canvas id="bar-chart" width="800" height="450"></canvas>
+
+<h2>Gráfico de Pastel</h2>
+<!-- Canvas donde se renderizará el gráfico de pastel -->
+<canvas id="pie-chart" width="800" height="450"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Obtener las cantidades de ingresos y gastos del modelo
+    var incomeData = @Html.Raw(Json.Serialize(incomeAmounts));
+    var expenseData = @Html.Raw(Json.Serialize(expenseAmounts));
+
+    // Obtén las etiquetas para el gráfico de barras (asumiendo que tienen las mismas longitudes)
+    var barLabels = [];
+    for (var i = 0; i < incomeData.length; i++) {
+        barLabels.push("Ingreso " + (i + 1));
+    }
+    for (var i = 0; i < expenseData.length; i++) {
+        barLabels.push("Gasto " + (i + 1));
+    }
+
+    // Procesar datos para el gráfico de pastel
+    var pieData = [
+        {
+            label: 'Ingresos',
+            data: incomeData,
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.2)', // Color de fondo de las porciones de ingresos
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)', // Color del borde de las porciones de ingresos
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'Gastos',
+            data: expenseData,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)', // Color de fondo de las porciones de gastos
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)', // Color del borde de las porciones de gastos
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }
+    ];
+
+    // Opciones del gráfico
+    var opciones = {
+        scales: {
+            y: {
+                beginAtZero: true // Empieza el eje Y en cero
+            }
+        }
+    };
+
+    // Obtén el contexto del canvas para el gráfico de barras
+    var barCtx = document.getElementById("bar-chart").getContext('2d');
+
+    // Crea el gráfico de barras
+    var barChart = new Chart(barCtx, {
+        type: 'bar', // Tipo de gráfico: barras
+        data: {
+            labels: barLabels,
+            datasets: [
+                {
+                    label: 'Ingresos',
+                    data: incomeData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de las barras de ingresos
+                    borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de las barras de ingresos
+                    borderWidth: 1
+                },
+                {
+                    label: 'Gastos',
+                    data: expenseData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de las barras de gastos
+                    borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de las barras de gastos
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: opciones // Opciones del gráfico
+    });
+
+    // Obtén el contexto del canvas para el gráfico de pastel
+    var pieCtx = document.getElementById("pie-chart").getContext('2d');
+
+    // Crea el gráfico de pastel
+    var pieChart = new Chart(pieCtx, {
+        type: 'pie', // Tipo de gráfico: pastel
+        data: {
+            labels: barLabels,
+            datasets: pieData
+        },
+        options: opciones // Opciones del gráfico
+    });
+</script>

@@ -1,0 +1,36 @@
+﻿@model MyFi.Models.Ingreso
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h1 class="titulo-morado2 text-center">Detalles del Ingreso</h1>
+    <hr />
+    <div class="details-container">
+        <div class="details-label">Monto:</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Monto)</div>
+
+        <div class="details-label">Tipo:</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Tipo)</div>
+
+        <div class="details-label">Fecha:</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Fecha)</div>
+
+        <div class="details-label">Notificación:</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Notificacion)</div>
+
+        <div class="details-label">Automático:</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Automatico)</div>
+
+        <div class="details-label">Recurrencia:</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Recurrencia)</div>
+
+        <div class="details-label">Usuario:</div>
+        <div class="details-value">@Html.DisplayFor(model => model.IdNavigation.Id)</div>
+    </div>
+
+    <div class="text-center">
+        <a class="btn btn-primary" asp-action="Index">Volver a la Lista</a>
+    </div>
+</div>
