@@ -2,9 +2,10 @@
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 <br />
+
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="![msedge_O9T1JA2ZyJ](https://github.com/DragontitanB/FinanZ/assets/107432108/25d2a1c4-a092-4bcb-b06a-47e8e0aceecf)" alt="Logo" width="80" height="80">
+    <img src="![MYFI](https://github.com/DragontitanB/FinanZ/assets/107432108/6d05bee2-f34a-471f-abb3-e4c196eb272d)" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">"FinanZ</h3>
     <p align="center">
