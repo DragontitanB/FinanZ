@@ -1,12 +1,5 @@
 # MyFi
 <a name="readme-top"></a>
-<!-- PROJECT LOGO -->
-<br />
-
-<div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="![MYFI](https://github.com/DragontitanB/FinanZ/assets/107432108/6d05bee2-f34a-471f-abb3-e4c196eb272d)" alt="Logo" width="80" height="80">
-  </a>
   <h3 align="center">MyFi</h3>
     <p align="center">
     MyFi-Your preference Web for finance
