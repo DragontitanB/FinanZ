@@ -1,4 +1,4 @@
-# FinanZ
+# MyFi
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 <br />
@@ -7,9 +7,9 @@
   <a href="https://github.com/github_username/repo_name">
     <img src="![MYFI](https://github.com/DragontitanB/FinanZ/assets/107432108/6d05bee2-f34a-471f-abb3-e4c196eb272d)" alt="Logo" width="80" height="80">
   </a>
-  <h3 align="center">"FinanZ</h3>
+  <h3 align="center">MyFi</h3>
     <p align="center">
-    FinanZ-Your preference Web for finance
+    MyFi-Your preference Web for finance
     <br />
     <a href="https://github.com/DragontitanB/FinanZ"><strong>Explore the docs »</strong></a>
     <br />
@@ -31,7 +31,7 @@
 
 
 
-<b>FinanZ Experience<b> Is a web platform that allows you to personalize your financial experience, personalizing it to your liking and making your life easier with options for managing them. Take advantage and use it to improve your financing.
+<b>MyFi Experience<b> Is a web platform that allows you to personalize your financial experience, personalizing it to your liking and making your life easier with options for managing them. Take advantage and use it to improve your financing.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
