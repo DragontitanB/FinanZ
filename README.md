@@ -4,9 +4,8 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src=" ![FinanZ](https://github.com/DragontitanB/FinanZ/assets/107432108/d1bde61f-7df3-460c-9d1d-6a6c0e9bfca4)" alt="Logo" width="80" height="80">
+    <img src="![msedge_O9T1JA2ZyJ](https://github.com/DragontitanB/FinanZ/assets/107432108/25d2a1c4-a092-4bcb-b06a-47e8e0aceecf)" alt="Logo" width="80" height="80">
   </a>
-
   <h3 align="center">"FinanZ</h3>
     <p align="center">
     FinanZ-Your preference Web for finance
